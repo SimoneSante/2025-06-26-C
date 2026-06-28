@@ -1,5 +1,5 @@
 import flet as ft
-
+from UI.controller import Controller
 
 class View(ft.UserControl):
     def __init__(self, page: ft.Page):
@@ -19,6 +19,7 @@ class View(ft.UserControl):
         self.txt_container = None
 
     def load_interface(self):
+
         # title
         self._title = ft.Text("Esame del 26/06/2025 - Turno C", color="green", size=24)
         self._page.controls.append(self._title)
@@ -26,6 +27,8 @@ class View(ft.UserControl):
         #ROW 1
         self._ddYear1 = ft.Dropdown(label="Year start", width=150)
         self._ddYear2 = ft.Dropdown(label="Year end", width=150)
+        self._controller.ddda()
+        self._controller.dda()
 
         self._btnBuildGraph = ft.ElevatedButton(text="Crea grafo", on_click=self._controller.handleBuildGraph)
         self._btnPrintDetails = ft.ElevatedButton(text="Stampa dettagli", on_click=self._controller.handlePrintDetails)
